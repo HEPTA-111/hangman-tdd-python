@@ -1,5 +1,5 @@
 # Hangman — TDD Python
-
+### By  Suraj
 This project is a Hangman game implemented in Python using a Test-Driven Development (TDD)approach with `pytest`.
 
 The game includes two difficulty levels to choose from:

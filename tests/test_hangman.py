@@ -1,4 +1,3 @@
-# tests/test_hangman.py
 import time
 import pytest
 from src.hangman import Game, Dictionary, HangmanCLI
@@ -9,7 +8,6 @@ def test_dictionary_returns_word_and_phrase():
     p = d.get_random("intermediate")
     assert isinstance(w, str) and len(w) > 0
     assert isinstance(p, str) and len(p) > 0
-    # basic word should not have leading/trailing whitespace
     assert w.strip() == w
 
 def test_initial_state_shows_underscores_for_letters():
@@ -20,7 +18,6 @@ def test_reveal_letter_all_positions():
     g = Game("banana")
     count = g.reveal_count("a")
     assert count == 3
-    # check current_state has 'a' in right spots
     assert g.current_state() == "_a_a_a"
 
 def test_correct_guess_does_not_reduce_life():
@@ -64,12 +61,10 @@ def test_invalid_letter_guess_raises():
         g.reveal_count("1")
 
 def test_input_with_timeout_returns_none_on_timeout(monkeypatch):
-    # Simulate a slow input function (sleeps longer than timeout)
     def slow_input(prompt):
-        time.sleep(0.1)  # small sleep
+        time.sleep(0.1)  
         return "x"
     cli = HangmanCLI(timeout_seconds=0.02, input_func=slow_input)
-    # short timeout ensures we get None without waiting long
     res = cli.input_with_timeout("prompt> ", timeout=0.02)
     assert res is None
 
