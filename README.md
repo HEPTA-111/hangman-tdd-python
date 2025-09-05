@@ -77,6 +77,6 @@ python src/hangman.py
 
 ---
 
-## Contributing
+
 
 
