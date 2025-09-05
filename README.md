@@ -1,21 +1,32 @@
 # Hangman — TDD Python
 
-A Hangman game implemented using Test-Driven Development (pytest).  
-Two levels:
-- Basic: single word
-- Intermediate: phrase (spaces/punctuation shown)
+This project is a **Hangman game** implemented in Python using a **Test-Driven Development (TDD)** approach with `pytest`.
 
-Features
-- Words/phrases come from dictionary files in `words/`
-- 15-second timer per guess (visible countdown). Timeout deducts a life.
-- Correct guesses reveal all occurrences of the letter.
-- Wrong guesses deduct a life. Player loses on 0 lives.
-- Player can attempt full-word/phrase guesses (wrong full guess deducts life).
-- Tests designed for TDD and CI.
+The game includes two difficulty levels to choose from:
+-   **Basic**: Guess single words.
+-   **Intermediate**: Guess phrases, where spaces and punctuation are revealed by default.
 
-## Quick start
-1. Create and activate virtual environment:
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate   # macOS / Linux
-   # .venv\Scripts\Activate.ps1 on Windows PowerShell
+---
+
+## Features
+
+-   Words and phrases are dynamically loaded from dictionary files located in the `words/` directory.
+-   A 15-second timer for each guess with a visible countdown adds a layer of challenge.
+-   Running out of time on a guess automatically deducts one life.
+-   Correct letter guesses reveal all occurrences of that letter in the answer.
+-   Incorrect guesses deduct a life. The game ends when the player has 0 lives remaining.
+-   Players have the option to guess the entire word or phrase at any time. An incorrect full guess will deduct one life.
+-   The project includes a comprehensive suite of unit tests, enabling continuous integration and ensuring code reliability.
+
+---
+
+## Quick Start
+
+Follow these steps to get the game running on your local machine.
+
+### 1. Create and Activate a Virtual Environment
+
+First, create a virtual environment to manage project dependencies.
+
+```bash
+python3 -m venv .venv
